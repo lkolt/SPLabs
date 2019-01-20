@@ -56,7 +56,8 @@ def compress(input, k, output):
     Image.fromarray(compress_image).save(output)
 
 
-for pic in pics:
-    for k in np.arange(2, 9, 2):
-        print('convert ' + pic + ', colors: ' + str(k))
-        compress(get_path(pic), k, get_path(pic + '_compressed_' + str(k)))
+if __name__ == "__main__":
+    for pic in pics:
+        for k in np.arange(2, 9, 2):
+            print('convert ' + pic + ', colors: ' + str(k))
+            compress(get_path(pic), k, get_path(pic + '_compressed_' + str(k)))
